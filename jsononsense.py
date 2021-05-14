@@ -5,7 +5,8 @@ from copy import copy
 from data_source import DataSource
 
 config = cp.ConfigParser()
-config.read(os.path.dirname(__file__) + '/config.ini')
+path = os.path.abspath(os.path.dirname(__file__)) + '/config.ini'
+config.read(path)
 config_file = config['JSONONSENSE']
 
 
@@ -85,5 +86,5 @@ class JSONonsense:
                 obj[key] = val
         return obj
 
-    def create_jsonsense(self):
+    def create(self):
         return self.populate({})
