@@ -1,11 +1,11 @@
+import os
 import random as rand
 import configparser as cp
-from pprint import pprint
 from copy import copy
 from data_source import DataSource
 
 config = cp.ConfigParser()
-config.read('config.ini')
+config.read(os.path.dirname(__file__) + '/config.ini')
 config_file = config['JSONONSENSE']
 
 
@@ -23,6 +23,7 @@ class JSONonsense:
 
         if JSONonsense.MAX_DEPTH > 20:
             JSONonsense.MAX_DEPTH = 20
+
         self.data_source = data_source
         self.refresh = refresh
         self.all_keys = data_source.get_keys()
@@ -86,6 +87,3 @@ class JSONonsense:
 
     def create_jsonsense(self):
         return self.populate({})
-
-
-pprint(JSONonsense().create_jsonsense())
