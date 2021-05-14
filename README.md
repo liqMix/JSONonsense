@@ -8,7 +8,7 @@ The minimum and maximum number of keys per object.
 ##### MAX_DEPTH
 The maximum depth generated. Maximum allowed is 20 until optimization.
 
-#### OBJ_CHANCE
+##### OBJ_CHANCE
 The percent chance for a generated value to be an obj instead of a literal.
     
 ## Default Generation
