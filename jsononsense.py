@@ -14,7 +14,7 @@ class JSONonsense:
     MIN_KEY_PER_OBJECT = int(config_file['MIN_KEY_PER_OBJECT'])
     MAX_KEY_PER_OBJECT = int(config_file['MAX_KEY_PER_OBJECT'])
     MAX_DEPTH = int(config_file['MAX_DEPTH'])
-    NEST_OBJ_CHANCE = float(config_file['NEST_OBJ_CHANCE'])
+    OBJ_CHANCE = float(config_file['OBJ_CHANCE'])
 
     def __init__(self, data_source: DataSource = DataSource(), refresh=False, config=None):
         if config:
@@ -79,7 +79,7 @@ class JSONonsense:
                 key = self._get_key()
 
             # Roll the dice, could be a value, could be another object!
-            if rand.random() < JSONonsense.NEST_OBJ_CHANCE:
+            if rand.random() < JSONonsense.OBJ_CHANCE:
                 obj[key] = self.populate(depth=depth)
             else:
                 val = self._get_val()
