@@ -1,4 +1,4 @@
-# JSONonense
+# JSONonsense
 A generator for creating arbitrary JSON objects from various sources.
 
 ## Configured values
